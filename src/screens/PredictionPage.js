@@ -177,7 +177,7 @@ useEffect(() => {
                 <ul style={{margin:'0px 0px 0px 10px', padding:'0px 0px 0px 20px'}}>
                   {matchInfo.map((item)=>{
                     return(
-                      <li className='p-1' style={{fontSize:'12px', backgroundColor:item.highlight? 'lightyellow':'', textAlign:'left'}}>{item.desc}</li>
+                      <li className='p-1' style={{fontSize:'14px', backgroundColor:item.highlight? 'lightyellow':'', textAlign:'left'}}>{item.desc}</li>
                       )
                     })}
                 </ul>
