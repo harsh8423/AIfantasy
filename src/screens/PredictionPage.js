@@ -60,7 +60,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     width: "95%",
-    height: "68%",
+    height: "75%",
     overflow: "auto",
     borderRadius: "12px",
     zIndex: 30,
@@ -186,7 +186,7 @@ useEffect(() => {
             {pagestate>2 && <DreamTeam/>}
         </div>
         <div className='' style={{position: 'fixed',bottom: '20px', right: '20px',zIndex: 9999}}>
-          <img onClick={openModal} src={cbot} style={{cursor:'pointer'}} height={45} width={45} />
+          <img onClick={openModal} src={cbot} style={{cursor:'pointer'}} height={55} width={55} />
         </div>
         <Modal
         isOpen={modalIsOpen}
