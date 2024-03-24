@@ -127,8 +127,6 @@ useEffect(() => {
                             "darkred",
                             "red",
                           ]}
-                          needleTransitionDuration={8000}
-                          needleTransition="easeElastic"
                           customSegmentStops={[0,61,100]}
                           customSegmentLabels={[
                             {
@@ -154,8 +152,6 @@ useEffect(() => {
                             "darkred",
                             "red",
                           ]}
-                          needleTransitionDuration={8000}
-                          needleTransition="easeElastic"
                           customSegmentStops={[0,57,100]}
                           customSegmentLabels={[
                             {
