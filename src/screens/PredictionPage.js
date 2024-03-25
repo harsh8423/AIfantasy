@@ -17,9 +17,9 @@ const team1="CSK"; const team2="GT"
 const venue="Chennai, 26 March"
 const matchno=7
 const team1color="yellow"; const team2color="lightgrey"
-const tossIndicator=""
+const tossIndicator="Chasing Team Advantage"
 const team1Predic={t1:54,t2:46}
-const team2Predic={t1:59,t2:41}
+const team2Predic={t1:61,t2:39}
 const scprePredictor=171
 const last5=[176,182,172,144,167]
 const matchInfo = [
