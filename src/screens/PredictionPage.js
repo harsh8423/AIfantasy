@@ -1,23 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import ReactSpeedometer from "react-d3-speedometer"
-
-import {teams,grounds} from './rawData'
 import Modal from "react-modal";
+import DreamTeam from '../components/DreamTeam';
 
-import versus from "../images/all/versus.png"
-import versus1 from "../images/all/versus (1).png"
-import rcb from "../images/teams/rcb.jpeg"
-import kxib from "../images/teams/kxib.jpeg"
 import ailogo from "../images/all/logoai.png"
 import dsclogo from "../images/all/logodsc2.png"
 import cbot from '../images/all/chatbot.png'
 import bulb from "../images/all/lightbulb.png"
 import cg from "../images/all/cg.png"
 
+import teamIcon1 from "../images/teams/csk.png"
+import teamIcon2 from "../images/teams/gt.jpg"
 import pitch from "../images/pitch/banglore.jpg"
-import DreamTeam from '../components/DreamTeam';
+
+const team1="CSK"; const team2="GT"
+const venue="Chennai, 26 March"
+const matchno=7
+const team1color="yellow"; const team2color="lightgrey"
+const tossIndicator=""
+const team1Predic={t1:54,t2:46}
+const team2Predic={t1:59,t2:41}
+const scprePredictor=171
+const last5=[176,182,172,144,167]
+const matchInfo = [
+  { 
+      desc: "Best cantaincy choice Kane williamson if he get chance ", 
+      highlight: false
+  },
+  { 
+      desc: "Ajinkya Rahane can be a unique X Factor in this match", 
+      highlight: false 
+  },
+  { 
+    desc: "Take risk and make A Omarzai as a capntain to your team", 
+    highlight: true 
+  },
+  { 
+      desc: "You can drop Devid miller beacuse he has worst record against CSK", 
+      highlight: false 
+  },
+];
 
 export default function PredictionPage() {
+
 
   const [pagestate, setpagestate] = useState(0)
 
@@ -29,26 +54,6 @@ export default function PredictionPage() {
   function openModal(index) {
     setIsOpen(true);
   }
-
-  const last5=[198,200,189,226,174]
-  const matchInfo = [
-    { 
-        desc: "Maxwell can hit big today, great choice for captaincy", 
-        highlight: false
-    },
-    { 
-        desc: "Do or Die match for Jonny Bairstow, good risk to pick", 
-        highlight: false 
-    },
-    { 
-      desc: "Slower-bowl variation bowler will perform good today, pick Harshal Patel ", 
-      highlight: true 
-    },
-    { 
-        desc: "Don't pick Alzari Joseph chinnayaswami has small square boundaries", 
-        highlight: false 
-    },
-];
 
 const customStyles = {
   content: {
@@ -88,22 +93,22 @@ useEffect(() => {
           <img src={dsclogo} width={100} height={20}/> 
         </div>
       </div>
-    <div className='container-fluid mb-5' style={{backgroundColor:'rgb(240, 241, 241)'}}>
+    <div className='container-fluid' style={{backgroundColor:'rgb(240, 241, 241)'}}>
         <div className='row'>
             <div className='col-12 mt-4' style={{backgroundColor:'white'}}>
-              <div style={{fontWeight:700,padding:'10px', color:'red'}}>{"Match 6"}</div>
+              <div style={{fontWeight:700,padding:'10px', color:'red'}}>{"Match "}{matchno}</div>
               <div  style={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}>
-                <img src={rcb} width={100} height={100}/>
+                <img src={teamIcon1} width={100} height={100}/>
                 <img src={require('../images/all/versus.png')} width={80} height={60}/>
-                <img src={kxib} width={100} height={100}/>  
+                <img src={teamIcon2} width={100} height={100}/>  
               </div>  
-              <div style={{fontWeight:500,padding:'10px'}}>{"Bangluru, 25 March"}</div>
+              <div style={{fontWeight:500,padding:'10px'}}>{venue}</div>
             </div>
             {pagestate>0 && <div className='col-12 p-2 '>
               <div className='normal-box m-2 pb-4' style={{backgroundColor:'white'}}>
                 <div style={{fontWeight:700,padding:'10px', color:'red'}}>Pitch Condition</div>
                 <img src={pitch} width="100%" height='auto'/>
-                <div className='normal-box' style={{fontWeight:700,padding:'10px',margin:'0px 10px'}}>AI Predicted Score: <strong style={{color:'green'}}>{"191 "}</strong><small><small>(min)</small></small></div>
+                <div className='normal-box' style={{fontWeight:700,padding:'10px',margin:'0px 10px'}}>AI Predicted Score: <strong style={{color:'green'}}>{scprePredictor}</strong><small><small>(min)</small></small></div>
                 <div style={{fontWeight:500,padding:'10px',textAlign:'left'}}>Last five match score</div>
                 {last5.map((item)=>{
                   return(
@@ -115,52 +120,52 @@ useEffect(() => {
                       {pagestate>1 && <div className='col-12'>
                         <div className='normal-box pb-4' style={{backgroundColor:'white'}}>
                         <div style={{fontWeight:700,padding:'10px', color:'red'}}>Win Prediction</div>
-                        <div style={{width:'250px',marginLeft:'15px',borderRadius:'8px',fontWeight:500,padding:'5px', fontSize:'14px',display:'flex', justifyContent:'center', alignItems:'center',backgroundColor:'lightgreen'}}><img src={bulb} width={18} height={18}/><span>First Batting team <strong>Advantage</strong></span></div>
-                        <div className='mt-3' style={{fontWeight:500,padding:'10px',textAlign:'left'}}>If RCB bat first</div>
+                        <div style={{width:'250px',marginLeft:'15px',borderRadius:'8px',fontWeight:500,padding:'5px', fontSize:'14px',display:'flex', justifyContent:'center', alignItems:'center',backgroundColor:'lightgreen'}}><img src={bulb} width={18} height={18}/><span>{tossIndicator}</span></div>
+                        <div className='mt-3' style={{fontWeight:500,padding:'10px',textAlign:'left'}}>If {team1} bat first</div>
                         <ReactSpeedometer
                           maxValue={100}
-                          value={61}
-                          currentValueText={"RCB 61% - KXIP 39%"}
+                          value={team1Predic.t1}
+                          currentValueText={`${team1} ${team1Predic.t1}% - ${team2} ${team1Predic.t2}%`}
                           width={270}
                           height={200}
                           segmentColors={[
-                            "darkred",
-                            "red",
+                            team1color,
+                            team2color,
                           ]}
-                          customSegmentStops={[0,61,100]}
+                          customSegmentStops={[0,team1Predic.t1,100]}
                           customSegmentLabels={[
                             {
-                              text: "RCB",
+                              text: team1,
                               position: "INSIDE",
                               color: "#555",
                             },
                             {
-                              text: "KXIP",
+                              text: team2,
                               position: "INSIDE",
                               color: "#555",
                             },
                           ]}/>
           
-                        <div style={{fontWeight:500,padding:'10px',textAlign:'left'}}>If KXIP bat first</div>
+                        <div style={{fontWeight:500,padding:'10px',textAlign:'left'}}>If {team2} bat first</div>
                         <ReactSpeedometer
                           maxValue={100}
-                          value={57}
-                          currentValueText={"RCB 57% - KXIP 43%"}
+                          value={team2Predic.t1}
+                          currentValueText={`${team1} ${team2Predic.t1}% - ${team2} ${team2Predic.t2}%`}
                           width={270}
                           height={200}
                           segmentColors={[
-                            "darkred",
-                            "red",
+                            team1color,
+                            team2color,
                           ]}
-                          customSegmentStops={[0,57,100]}
+                          customSegmentStops={[0,team2Predic.t1,100]}
                           customSegmentLabels={[
                             {
-                              text: "RCB",
+                              text:team1,
                               position: "INSIDE",
                               color: "#555",
                             },
                             {
-                              text: "KXIP",
+                              text:team2,
                               position: "INSIDE",
                               color: "#555",
                             },
@@ -169,7 +174,7 @@ useEffect(() => {
                       </div>}
             {pagestate>2 && <div className='col-12 p-2 '>
               <div className='normal-box m-2 pb-2' style={{backgroundColor:'white'}}>
-                <div style={{fontWeight:700,padding:'10px', color:'red'}}>Match Help</div>
+                <div style={{fontWeight:700,padding:'10px', color:'red'}}>Match Help Center</div>
                 <ul style={{margin:'0px 0px 0px 10px', padding:'0px 0px 0px 20px'}}>
                   {matchInfo.map((item)=>{
                     return(
@@ -180,6 +185,10 @@ useEffect(() => {
               </div>
             </div>}
             {pagestate>2 && <DreamTeam/>}
+            <div className='col-12 mt-2 mb-5' style={{color:'red', padding:'10px', fontWeight:900, fontSize:'16px'}}>
+              Powered By <br/>
+              <img src={dsclogo} width={270} height={40}/> 
+            </div>
         </div>
         <div className='' style={{position: 'fixed',bottom: '20px', right: '20px',zIndex: 9999}}>
           <img onClick={openModal} src={cbot} style={{cursor:'pointer'}} height={55} width={55} />

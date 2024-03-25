@@ -2,12 +2,13 @@ import React, {useState} from 'react'
 import {teams,grounds} from './rawData'
 
 import { useNavigate} from "react-router-dom";
-import versus from "../images/all/versus.png"
 import versus1 from "../images/all/versus (1).png"
-import rcb from "../images/teams/rcb.jpeg"
-import kxib from "../images/teams/kxib.jpeg"
+
 import ailogo from "../images/all/logoai.png"
 import dsclogo from "../images/all/logodsc2.png"
+
+const team1="CSK"; const team2="GT"
+const venue="Chennai"
 
 export default function Home() {
 
@@ -28,7 +29,7 @@ export default function Home() {
               <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}>
               <div className="btn-group">
                 <button style={{border: "1px solid lightgrey",color:'black'}} className="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                  <span style={{padding:'5px 5px',margin:'4px'}}><strong>RCB</strong></span>
+                  <span style={{padding:'5px 5px',margin:'4px'}}><strong>{team1}</strong></span>
                 </button>
               </div>
               <div>
@@ -36,12 +37,12 @@ export default function Home() {
               </div>
               <div className="btn-group">
                 <button style={{border: "1px solid lightgrey",color:'black'}} className="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                  <span style={{padding:'5px 5px',margin:'4px'}}><strong>KXIP</strong></span>
+                  <span style={{padding:'5px 5px',margin:'4px'}}><strong>{team2}</strong></span>
                 </button>
               </div>
               </div>
               <div className="btn-group mt-3">
-              <div style={{fontWeight:500,padding:'10px'}}>Select Venue</div>
+              <div style={{fontWeight:500,padding:'10px'}}>Select venue</div>
 
                 <button style={{
                   border: "1px solid lightgrey", color:'black',
@@ -53,7 +54,7 @@ export default function Home() {
                   {grounds.map((item)=>{
                     return(
                       <div className='text-center' style={{borderBottom:'1px solid lightgrey'}}>
-                        <div style={{padding:'5px 35px',borderRadius:'8px',cursor:'pointer'}} onClick={()=>{setselectedvenue(item)}}>{item}</div>
+                        <div style={{padding:'5px 35px',borderRadius:'8px',cursor:'pointer'}} value={venue} onClick={()=>{setselectedvenue(item)}}>{item}</div>
                       </div>
                     )
                   })}

@@ -2,110 +2,110 @@ import React from 'react'
 import pitchBack from "../images/all/pitchBack.jpg"
 import logo from "../images/all/logodsc2.png"
 
+const team1='CSK'
 const keeper=[
     {
-        name: "A Rawat",
-        isXF: true,
+        name: "W Saha",
+        isXF: false,
         isDetail: false,
-        team: "RCB",
-        imgUrl: "anujRawat.png",
+        team: "GT",
+        imgUrl: "w_saha.png",
     },
-    {
-        name: 'J Bairstow',
-        isXF:false,
-        isDetail:false,
-        team:'KXIP',
-        imgUrl:'JonnyBairstow.png'
-    },
-    
 ]
 
 const batsmen=[
     {
-        name: "V Kohli",
+        name: "S Gill",
         isXF: false,
         isDetail: false,
-        team: "RCB",
-        imgUrl: "viratkohli.png",
+        team: "GT",
+        imgUrl: "gill.png",
     },
     {
-        name: "faf Du Ple",
+        name: "D Michell",
+        isXF: true,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "D_michell.png",
+    },
+    {
+        name: "R Gaikwad",
         isXF: false,
         isDetail: false,
-        team: "RCB",
-        imgUrl: "fafduplesis.png",
+        team: "CSK",
+        imgUrl: "RGaikwad.png",
     },
     {
-        name: 'S Dhawan',
-        isXF:false,
-        isDetail:false,
-        team:'KXIP',
-        imgUrl:'ShikharDhawan.png'
+        name: "S Sudarshan",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "saiSudarshan.png",
     },
 ]
-
-const allRounders=[
-    {
-        name: 'Livingstone',
-        isXF:false,
-        isDetail:false,
-        team:'KXIP',
-        imgUrl:"Liam_Livingstone.png"
-    },  
-    {
-        name: 'G Maxwel',
-        isXF:true,
-        isDetail:false,
-        team:'RCB',
-        imgUrl:"Glenn_Maxwel.png"
-    },
-    {
-        name: 'S Curran',
-        isXF:false,
-        isDetail:false,
-        team:'KXIP',
-        imgUrl:"Sam_Curran.png"
-    },
-    {
-        name: "C Green",
+    
+    const allRounders=[
+        {
+            name: "A Omarzai",
         isXF: false,
         isDetail: false,
-        team: "RCB",
-        imgUrl: "Cameron_Green.png",
+        team: "GT",
+        imgUrl: "A_omarzai.png",
+    },
+    {
+        name: "Jadeja",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "jadeja.png",
+    },
+    {
+        name: "R Ravindra",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "rachinRavindra.png",
     },
 ]
 
 const bowlers=[
     {
-        name: 'Harshal P',
-        isXF:false,
-        isDetail:false,
-        team:'RCB',
-        imgUrl:'Harshal_Patel.png'
+        name: "D Chahar",
+        isXF: true,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "deepak_chahar.png",
     },
     {
-        name: 'Rabada',
-        isXF:false,
-        isDetail:false,
-        team:'KXIP',
-        imgUrl:"Kagiso_Rabada.png"
+        name: "Rashid Khan",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "rashidKhan.png",
+    },
+    {
+        name: "M Rahman",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "fizz.png",
     },
 ]
 
 const XF=[
     {
-        name: "D Karthik",
-        isXF: false,
+        name: "D Miller",
+        isXF: true,
         isDetail: false,
-        team: "RCB",
-        imgUrl: "DineshKarthik.png",
+        team: "GT",
+        imgUrl: "david_miller.png",
     },
     {
-        name: 'R Patidar',
-        isXF:false,
-        isDetail:false,
-        team:'RCB',
-        imgUrl:'rajatPatidar.png'
+        name: "A Rahane",
+        isXF: true,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "ajinkyaRahane.png",
     },
 ]
 
@@ -130,7 +130,7 @@ export default function DreamTeam() {
                 return(
                     <div className={player.isXF? 'normal-box p-1':''} style={{borderStyle:player.isXF? 'dashed':'',display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
                         <img src={require(`../images/playerIcon/${player.imgUrl}`)} width={45} height={45}/>
-                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team=='RCB'? 'white':'black', backgroundColor: player.team=='RCB'? 'black':'white', fontWeight:500 }}>{player.name}</span>
+                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team==team1? 'white':'black', backgroundColor: player.team==team1? 'black':'white', fontWeight:500 }}>{player.name}</span>
                     </div>
                 )
             })}
@@ -141,7 +141,7 @@ export default function DreamTeam() {
                 return(
                     <div className={player.isXF? 'normal-box p-1':''} style={{borderStyle:player.isXF? 'dashed':'',display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
                         <img src={require(`../images/playerIcon/${player.imgUrl}`)} width={45} height={45}/>
-                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team=='RCB'? 'white':'black', backgroundColor: player.team=='RCB'? 'black':'white', fontWeight:500 }}>{player.name}</span>
+                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team==team1? 'white':'black', backgroundColor: player.team==team1? 'black':'white', fontWeight:500 }}>{player.name}</span>
                     </div>
                 )
             })}
@@ -152,7 +152,7 @@ export default function DreamTeam() {
                 return(
                     <div className={player.isXF? 'normal-box p-1':''} style={{borderStyle:player.isXF? 'dashed':'',display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
                         <img src={require(`../images/playerIcon/${player.imgUrl}`)} width={45} height={45}/>
-                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team=='RCB'? 'white':'black', backgroundColor: player.team=='RCB'? 'black':'white' , fontWeight:500}}>{player.name}</span>
+                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team==team1? 'white':'black', backgroundColor: player.team==team1? 'black':'white' , fontWeight:500}}>{player.name}</span>
                     </div>
                 )
             })}
@@ -163,7 +163,7 @@ export default function DreamTeam() {
                 return(
                     <div className={player.isXF? 'normal-box p-1':''} style={{borderStyle:player.isXF? 'dashed':'',display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
                         <img src={require(`../images/playerIcon/${player.imgUrl}`)} width={45} height={45}/>
-                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team=='RCB'? 'white':'black', backgroundColor: player.team=='RCB'? 'black':'white', fontWeight:500 }}>{player.name}</span>
+                        <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team==team1? 'white':'black', backgroundColor: player.team==team1? 'black':'white', fontWeight:500 }}>{player.name}</span>
                     </div>
                 )
             })}
@@ -178,7 +178,7 @@ export default function DreamTeam() {
                     return(
                         <div className={'normal-box p-1'} style={{borderStyle:'',display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', backgroundColor:'white'}}>
                             <img src={require(`../images/playerIcon/${player.imgUrl}`)} width={45} height={45}/>
-                            <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team=='RCB'? 'white':'black', backgroundColor: player.team=='RCB'? 'black':'white', fontWeight:500 }}>{player.name}</span>
+                            <span style={{padding:'1px 7px',borderRadius:'4px', fontSize:'11px',color: player.team==team1? 'white':'black', backgroundColor: player.team==team1? 'black':'white', fontWeight:500 }}>{player.name}</span>
                         </div>
                     )
                 })}

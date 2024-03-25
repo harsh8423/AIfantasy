@@ -10,21 +10,108 @@ const teams = [
   { name: "GT", color: "#1B2133" }, // Gujarat Titans
   { name: "LSG", color: "#0057E2" }, // Lucknow Super Giants
 ];
+const csk=[
+    {
+        name: "A Rahane",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "ajinkyaRahane.png",
+    },
+    {
+        name: "D Michell",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "D_michell.png",
+    },
+    {
+        name: "R Gaikwad",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "RGaikwad.png",
+    },
+    {
+        name: "Jadeja",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "jadeja.png",
+    },
+    {
+        name: "R Ravindra",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "rachinRavindra.png",
+    },
+    {
+        name: "D Chahar",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "deepak_chahar.png",
+    },
+    {
+        name: "M Rahman",
+        isXF: false,
+        isDetail: false,
+        team: "CSK",
+        imgUrl: "fizz.png",
+    },
+    
+]
 
-const grounds = [
-  "Delhi",
-  "Mumbai",
-  "Hyderabad",
-  "Chennai",
-  "Kolkata",
-  "Ahmadabad",
-  "Mohali",
-  "Bangalore",
-  "Guwahati",
-  "Lucknow",
-  "Dharamsala",
-];
+const gt=[
+    {
+        name: "W Saha",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "w_saha.png",
+    },
+    {
+        name: "D Miller",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "david_miller.png",
+    },
+    {
+        name: "S Sudarshan",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "saiSudarshan.png",
+    },
+    {
+        name: "S Gill",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "gill.png",
+    },
+    {
+        name: "A Omarzai",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "A_omarzai.png",
+    },
+    {
+        name: "Rashid Khan",
+        isXF: false,
+        isDetail: false,
+        team: "GT",
+        imgUrl: "rashidKhan.png",
+    },
+]
 
+// import "../images/playerIcon/rachinRavindra.png"
+const rcb=[
+
+]
 const match6team = [
     {
         name: "V Kohli",
@@ -116,5 +203,18 @@ const match6team = [
         team:'KXIP',
         imgUrl:'../images/playerIcon/ShikharDhawan.png'
     },
+];
+const grounds = [
+  "Delhi",
+  "Mumbai",
+  "Hyderabad",
+  "Chennai",
+  "Kolkata",
+  "Ahmadabad",
+  "Mohali",
+  "Bangalore",
+  "Guwahati",
+  "Lucknow",
+  "Dharamsala",
 ];
 module.exports = { teams, grounds };
